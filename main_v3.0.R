@@ -1,18 +1,11 @@
 #Mark Westoby, Dan Falster and Will Cornwell
-#last modified 2012.02.27
 
 #clear memory
 rm(list=ls(all=TRUE))
 
 #read in leaf functions
-	source("R/functions-utils.R")    #load functions
-	source("R/functions-model.R")    #load functions
-
-
-#Revision for JTB 2012.02.27
-# - reversed axis direction for VPD in figs 2,5,7
-# - set N cost to 0.0 (effectively removed)
-# - changed cost lines in 2,3,4, 6 to be dashed
+source("R/functions-utils.R")    #load functions
+source("R/functions-model.R")    #load functions
 
 #--------------------------------------------------
 # MS FIGURES
@@ -22,27 +15,15 @@ rm(list=ls(all=TRUE))
 	CB_axis =seq(0, 8, 1); CB_axis2=seq(0, 8, 0.5);
 	SALA_lab = expression(paste("SA:LA (", 10^-4, m^2, m^-2,")"));
  	SALA_axis =seq(0, .0004*1e4, 1); SALA_axis2=seq(0, .0004*1e4, 0.5);
-	cex.cost =1.5;
 
 	#for opitmum sala plots
 	OPT_lab = expression(paste("Optimal SA:LA (", 10^-4, m^2, m^-2,")"));
 	OPT_axis =seq(0, .00025*1e4, 0.5); OPT_axis2=seq(0, .00025*1e4, 0.25);
 
-#make figures
-	LWD =1;  CEX.L =0.9; CEX.A = 1.2; #formatting
-
-
 
 #Variable
-    N.alloc = 0.5
-  	RALA <- 3 				#m2/m2 (range 0.2-40)
-	SALA <- 0.0005
-	SALA.min <- 0.00000001
-	SALA.max <- 0.005
-	SALA.vec=seq_log(SALA.min, SALA.max, 1.01)
+#    N.alloc = 0.5
 
-
-pdf("fig2.pdf", height=8,width=12, pointsize=10, paper ="special")
 
 	source("R/figures.r")
 	to.pdf(figure2(), "output/figure2.pdf", height=8,width=12)

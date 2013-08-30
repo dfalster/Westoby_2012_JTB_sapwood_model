@@ -150,12 +150,12 @@ cost_ben.opt.Cbal.heightwrap <- function(height, ra.la, leaf, plant , env){
 	return(cost_ben.opt.Cbal(ra.la, leaf, Plant.temp, env))
 }
 
-cost_ben.opt.Cbal <- function(ra.la, leaf, plant , env){
+cost_ben.opt.Cbal <- function(ra.la, leaf, plant , env, SALA.min = 1E-8, SALA.max = 1E-2){
 	optim<-optimise(net.Cbal, c(SALA.min, SALA.max), maximum= T, tol = 0.000001, ra.la=ra.la, leaf=leaf, plant=plant, env=env);
  	return(optim$objective)
 }
 
-cost_ben.opt <- function(ra.la, leaf, plant , env){
+cost_ben.opt <- function(ra.la, leaf, plant , env, SALA.min = 1E-8, SALA.max = 1E-2){
  	optim<-optimise(net.Cbal, c(SALA.min, SALA.max), maximum= T, tol = 0.000001,  ra.la=ra.la, leaf=leaf, plant=plant, env=env);
  	return(cost_ben(optim$maximum, ra.la, leaf, plant, env));
 }
