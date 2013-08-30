@@ -103,13 +103,13 @@ par(mfrow=c(2,3), omi=c(0.2, 0.2, 0.2, 0.2), mai=c(0.5, 0.4, 0.5, 0.1), pty="s")
 }
 
 figure3 <- function(SALA.vec =  seq_log(1E-8, 5E-3, 1.01), cex.cost = 1.5, CEX.L = 1, CEX.A = 0.9, RALA = 3){
-par(mfrow=c(1,2), omi=c(0.2, 0.2, 0.2, 0.2), mai=c(0.5, 0.4, 0.5, 0.1), pty="s")
+	par(mfrow=c(1,2), omi=c(0.2, 0.2, 0.2, 0.2), mai=c(0.5, 0.4, 0.5, 0.1), pty="s")
 	pars <- load_default_parameters()
 	#plot a  - Cost benefit curves over soil to root resistance
 	ENV <- seq(0, 10000, 1e3);
 	fig.setup(c(min(CB_axis), max(CB_axis)), CB_lab, CB_axis, CB_axis2, c(min(SALA_axis), max(SALA_axis)),SALA_lab, SALA_axis, SALA_axis2, CEX.A, CEX.L);
 	for(i in 1:length(ENV)){
-		pars$Env$dw = ENV[i]*Ksoil(Env)*RALA;
+		pars$Env$dw = ENV[i]*Ksoil(pars$Env)*RALA;
 		CB = cost_ben(SALA.vec, RALA, pars$Leaf, pars$Plant, pars$Env)
     if(i==1)  #only one cost line because all the same
 		  points(CB[1,]*1e4, CB[7,]*1e-3, col=1,  type='l', cex=cex.cost,  lty='dashed')  # Invest
@@ -122,7 +122,7 @@ par(mfrow=c(1,2), omi=c(0.2, 0.2, 0.2, 0.2), mai=c(0.5, 0.4, 0.5, 0.1), pty="s")
 	OPT <- NULL;
 	ENV <- seq(0, 1e4, 100);
 	for(i in 1:length(ENV)){
-		pars$Env$dw = ENV[i]*Ksoil(Env)*RALA;
+		pars$Env$dw = ENV[i]*Ksoil(pars$Env)*RALA;
 		OP = cost_ben.opt(RALA, pars$Leaf, pars$Plant, pars$Env);
 		if(OP[8] > 0)  OPT <- rbind(OPT, c(ENV[i], OP[1], OP[5], OP[3]))
 		}
