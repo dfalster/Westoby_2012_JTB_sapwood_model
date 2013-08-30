@@ -5,8 +5,9 @@
 rm(list=ls(all=TRUE))
 
 #read in leaf functions
-	source("leaf_v3.0.r")    #load functions
-	source("params.r")       #default params
+	source("R/functions-utils.R")    #load functions
+	source("R/functions-model.R")    #load functions
+
 
 #Revision for JTB 2012.02.27
 # - reversed axis direction for VPD in figs 2,5,7
@@ -29,17 +30,43 @@ rm(list=ls(all=TRUE))
 
 #make figures
 	LWD =1;  CEX.L =0.9; CEX.A = 1.2; #formatting
-	source("Figure2.r")
-	CEX.L =1.0; CEX.A = 0.9; #formatting
+
+
+
+#Variable
+    N.alloc = 0.5
+  	RALA <- 3 				#m2/m2 (range 0.2-40)
+	SALA <- 0.0005
+	SALA.min <- 0.00000001
+	SALA.max <- 0.005
+	SALA.vec=seq_log(SALA.min, SALA.max, 1.01)
+
+
+pdf("fig2.pdf", height=8,width=12, pointsize=10, paper ="special")
+
+	source("R/figures.r")
+	to.pdf(figure2(), "output/figure2.pdf", height=8,width=12)
+
+pdf("fig3.pdf", height=4,width=8, pointsize=10, paper ="special" )
+
 	source("Figure3.r")
+
+	pdf("fig4.pdf", height=4,width=8, pointsize=10, paper ="special" )
+
 	source("Figure4.r")
-	CEX.L =0.9; CEX.A = 1.2; #formatting
+
+	pdf("fig5.pdf", height=4,width=10, pointsize=10, paper ="special" )
 	source("Figure5.r")
-	CEX.L =1.0; CEX.A = 0.9; #formatting
+
+	pdf("fig6.pdf", height=4,width=8, pointsize=10, paper ="special" )
 	source("Figure6.r")
-	CEX.L =0.9; CEX.A = 1.2; #formatting
+
+	pdf("fig7.pdf", height=12,width=8, pointsize=10, paper ="special" )
 	source("Figure7.r")
-	source("change with traits.r")
+
+
+pdf("trait_plots.pdf", height=8,width=12, pointsize=10, paper ="special" )
+	source("Figure8.r")
 
 #-------------------------------------------------------------------------------
 # EXTRA PLOTS
