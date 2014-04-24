@@ -1,6 +1,6 @@
 # An evolutionary attractor model for sapwood cross section in relation to leaf area
 
-[ Mark Westoby](http://bio.mq.edu.au/research/groups/ecology//westoby/mark.htm),
+[Mark Westoby](http://bio.mq.edu.au/research/groups/ecology//westoby/mark.htm),
 [William K. Cornwell](http://www.phylodiversity.net/wcornwell/),
 [Daniel Falster](http://danielfalster.com/)
 
@@ -12,15 +12,24 @@ Westoby, M, W. K. Cornwell, and D. S. Falster. “An Evolutionary Attractor Mode
 
 ## Running
 
+To reproduce the figures from the paper, run the command
+
+```
+make
+```
+
+This will build processed versions of the data in the output directory. Alternative you can open `R` and type
+
 ```
 source(`analysis.R`)
 ```
 
-will reproduce the figures from the paper.
+A separate file  `Analytical solutions.m` contain matlab code used to derive the analytical solution for allocation of nitrogen presented in the appendix of the paper.
+
+## Further details
 
 Please note:
 
 - This code was archived post-publication, so there is no link to the code at the journal's website.
 - Code was written between 2006-2010 by Daniel Falster and William Cornwell.
-- The code included in this release has been slightly restructured to improve readability and code quality. The version run for submission is available [here](https://github.com/dfalster/Westoby_2012_JTB_sapwood_model/commit/20215f539f78f7ecc73635e41844032cdea6c92b)
-
+- The code included in this release has been slightly restructured to improve readability and code quality. The version run for publication is available [here](https://github.com/dfalster/Westoby_2012_JTB_sapwood_model/commit/20215f539f78f7ecc73635e41844032cdea6c92b).
