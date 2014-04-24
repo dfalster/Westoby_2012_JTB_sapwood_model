@@ -517,8 +517,6 @@ figure7 <- function(SALA.vec = seq_log(1e-08, 0.005, 1.01), cex.cost = 1.5, CEX.
     fig.setup(YLIM.2, YLAB.2, Y_ax.2, Y_ax2.2, XLIM, XLAB, X_ax, X_ax2, CEX.A, CEX.L)
     points(OPT1[, 1], OPT1[, 5], type = "l", lty = "dashed")
     title("b)", adj = 0, cex.main = 1.5)
-    # plot SALA for optimising H
-    print(OPT1)
 
     # VPD
     pars <- load_default_parameters()  #reset parameters
