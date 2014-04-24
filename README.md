@@ -26,6 +26,17 @@ source(`analysis.R`)
 
 A separate file  `Analytical solutions.m` contains matlab code used to derive the analytical solution for allocation of nitrogen presented in the appendix of the paper.
 
+## Citation
+
+For archival purposes, the code used to produce figures for publication has been lodged with figshare [here](http://dx.doi.org/10.6084/m9.figshare.1005160). This is the same as code included in [this github release](https://github.com/dfalster/Westoby_2012_JTB_sapwood_model/releases/tag/v1.0).
+
+To cite this code:
+
+```
+	Westoby_2012_JTB_sapwood_model. Daniel Falster, Will Cornwell. figshare.
+	http://dx.doi.org/10.6084/m9.figshare.1005160
+```
+
 ## Further details
 
 Please note:
