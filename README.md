@@ -18,13 +18,13 @@ To reproduce the figures from the paper, run the command
 make
 ```
 
-This will build processed versions of the data in the output directory. Alternative you can open `R` and type
+Alternative you can open `R` and type
 
 ```
 source(`analysis.R`)
 ```
 
-A separate file  `Analytical solutions.m` contain matlab code used to derive the analytical solution for allocation of nitrogen presented in the appendix of the paper.
+A separate file  `Analytical solutions.m` contains matlab code used to derive the analytical solution for allocation of nitrogen presented in the appendix of the paper.
 
 ## Further details
 
