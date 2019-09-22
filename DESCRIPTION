@@ -1,0 +1,21 @@
+Type: Compendium
+Package: Compendium
+Title: An Evolutionary Attractor Model for Sapwood Cross Section in Relation to Leaf Area
+Version: 1.0.1
+Authors@R: c(
+    person(given = "Mark", 
+           family = "Westoby", 
+           role = "aut"),
+    person(given = "William",
+           family = "Cornwell", 
+           role = "aut"),
+    person(given = "Daniel",
+           family = "Falster", 
+           role = "aut",
+           email = "daniel.falster@unsw.edu.au",
+           comment = c(ORCID = "0000-0002-9814-092X"))
+    )
+Description: This repository contains code needed to reproduce the article: Westoby, M, W. K. Cornwell, and D. S. Falster. “An Evolutionary Attractor Model for Sapwood Cross Section in Relation to Leaf Area.” Journal of Theoretical Biology 303 (2012): 98–109. doi: 10.1016/j.jtbi.2012.03.008
+License: license.md file
+Encoding: UTF-8
+LazyData: true
